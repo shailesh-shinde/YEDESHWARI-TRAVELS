@@ -1,0 +1,25 @@
+# Netlify Configuration for Yedeshwari Travels
+
+[build]
+  base = "client"
+  publish = "dist"
+  command = "npm run build"
+
+# SPA Fallback for React Router (e.g. /admin, /admin/dashboard)
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+
+# Security & Performance Headers
+[[headers]]
+  for = "/assets/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "DENY"
+    X-XSS-Protection = "1; mode=block"
+    X-Content-Type-Options = "nosniff"

@@ -1,0 +1,24 @@
+{
+  "name": "yedeshwari-travels-pune",
+  "version": "1.0.0",
+  "description": "Premium Travel Agency & Bus Rental Portal for Yedeshwari Travels Pune",
+  "scripts": {
+    "dev": "concurrently \"npm run dev:server\" \"npm run dev:client\"",
+    "dev:server": "cd server && npm run dev",
+    "dev:client": "cd client && npm run dev",
+    "start": "node server/src/index.js",
+    "build": "npm --prefix client install && npm --prefix client run build && npm --prefix server install",
+    "install:all": "npm --prefix server install && npm --prefix client install"
+  },
+  "keywords": [
+    "travel-agency",
+    "bus-rental",
+    "pune",
+    "yedeshwari-travels"
+  ],
+  "author": "Yedeshwari Travels",
+  "license": "ISC",
+  "devDependencies": {
+    "concurrently": "^10.0.7"
+  }
+}
